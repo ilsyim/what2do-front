@@ -16,8 +16,16 @@ async function getDuoActivity() {
   return data
 }
 
+async function getGroupActivity() {
+  const res = await fetch(`${BASE_URL}?participants=4`)
+  const data = await res.json()
+  console.log(data)
+  return data
+}
+
 
 export {
   getSoloActivity,
-  getDuoActivity
+  getDuoActivity,
+  getGroupActivity
 }

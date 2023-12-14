@@ -1,11 +1,12 @@
 import { useState,useEffect } from 'react'
-import { getSoloActivity, getDuoActivity } from '../../services/apiService'
+import { getSoloActivity, getDuoActivity, getGroupActivity } from '../../services/apiService'
 
 
 const ActivityCard = () => {
 
   const [ActivityCard,setActivityCard] = useState()
   const [DuoActivityCard,setDuoActivityCard] = useState()
+  const [GroupActivityCard,setGroupActivityCard] = useState()
   
   useEffect(() => {
     const fetchActivity = async () => {
@@ -26,6 +27,15 @@ const ActivityCard = () => {
   }, [])
   console.log('activity', ActivityCard?.key)
 
+  useEffect(() => {
+    const fetchGroupActivity = async () => {
+      const data = await getGroupActivity()
+      setGroupActivityCard(data)
+    }
+    fetchGroupActivity()
+  }, [])
+  console.log('activity', ActivityCard?.key)
+
   
 
   return(
@@ -35,6 +45,7 @@ const ActivityCard = () => {
     <p> Activity Cards will appear here </p>
     <p>{ActivityCard?.activity}</p>
     <p>{DuoActivityCard?.activity}</p>
+    <p>{GroupActivityCard?.activity}</p>
   </div>
   </>
   )
