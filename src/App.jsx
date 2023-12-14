@@ -8,6 +8,7 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
+import ActivityCard from './pages/ActivityCard/ActivityCard'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -38,6 +39,7 @@ function App() {
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
+        <Route path="/activity" element={<ActivityCard user={user} />} />
         <Route
           path="/profiles"
           element={
