@@ -8,7 +8,7 @@ const Landing = ({ user }) => {
       <div>
         <p>add the bored api "https://www.boredapi.com/documentation"</p>
         <p>make divs to show the suggetions</p>
-        <p></p>
+        <p>this is an app to help you decide what to do on solo dates with yourself or with others!</p>
       </div>
       
     </main>
